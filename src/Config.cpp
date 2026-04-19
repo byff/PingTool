@@ -1,7 +1,6 @@
 #include "Config.h"
 #include <fstream>
 #include <windows.h>
-#include <shlobj.h>
 
 AppConfig AppConfig::default_config() {
     AppConfig cfg;
@@ -19,7 +18,7 @@ AppConfig AppConfig::default_config() {
 
 ConfigManager::ConfigManager() : config(AppConfig::default_config()) {
     char appdata[MAX_PATH];
-    if (SUCCEEDED(SHGetFolderPathA(NULL, CSIDL_APPDATA, NULL, 0, appdata))) {
+    if (GetEnvironmentVariableA("APPDATA", appdata, MAX_PATH) > 0) {
         config_path = std::string(appdata) + "\\PingTool\\config.json";
     } else {
         config_path = "config.json";
