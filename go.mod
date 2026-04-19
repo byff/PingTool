@@ -3,9 +3,9 @@ module pingtool
 go 1.21
 
 require (
-	excelize/v2 v2.8.1
 	github.com/pelletier/go-toml/v2 v2.1.1
 	github.com/wailsapp/wails/v2 v2.8.0
+	github.com/xuri/excelize/v2 v2.8.1
 	golang.org/x/net v0.20.0
 )
 
@@ -33,7 +33,10 @@ require (
 	github.com/wailsapp/go-webview2 v1.0.10 // indirect
 	github.com/wailsapp/mimetype v1.4.1 // indirect
 	golang.org/x/crypto v0.17.0 // indirect
+	github.com/xuri/efp v0.0.0-20230802181842-ad255f2331ca // indirect
+	github.com/xuri/excelize/v2 v2.8.1 // indirect
 	golang.org/x/exp v0.0.20231226003508-02704c960a9b // indirect
+	golang.org/x/net v0.20.0 // indirect
 	golang.org/x/sys v0.15.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 )

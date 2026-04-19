@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"excelize/v2"
+	"github.com/xuri/excelize/v2"
 )
 
 type PingResult struct {
