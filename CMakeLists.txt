@@ -53,7 +53,6 @@ endif()
 
 if(MSVC)
     add_compile_options(/utf-8 /W3 /WX-)
-    target_compile_options(${PROJECT_NAME} PRIVATE /permissive-)
 endif()
 
 if(ENABLE_STRIP)
