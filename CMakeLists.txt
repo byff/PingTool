@@ -46,8 +46,9 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 )
 
 if(WIN32)
-    add_compile_definitions(_WIN32_WINNT=0x0601 WIN32_LEAN_AND_MEAN NOMINMAX)
+    add_compile_definitions(_WIN32_WINNT=0x0A00 WIN32_LEAN_AND_MEAN NOMINMAX)
     add_compile_definitions(UNICODE _UNICODE)
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS OFF)
 endif()
 
 if(MSVC)
