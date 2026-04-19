@@ -26,11 +26,15 @@ jobs:
 
       - name: Install Wails
         run: go install github.com/wailsapp/wails/v2/cmd/wails@latest
+        env:
+          GO111MODULE: on
 
       - name: Get Go dependencies
         run: |
           go mod tidy
           go mod download
+        env:
+          GO111MODULE: on
 
       - name: Get frontend dependencies
         working-directory: ./frontend
@@ -40,6 +44,7 @@ jobs:
         working-directory: .
         run: wails build --platform windows/amd64
         env:
+          GO111MODULE: on
           CGO_ENABLED: 1
 
       - name: Upload Windows artifact
@@ -65,11 +70,15 @@ jobs:
 
       - name: Install Wails
         run: go install github.com/wailsapp/wails/v2/cmd/wails@latest
+        env:
+          GO111MODULE: on
 
       - name: Get Go dependencies
         run: |
           go mod tidy
           go mod download
+        env:
+          GO111MODULE: on
 
       - name: Get frontend dependencies
         working-directory: ./frontend
@@ -85,6 +94,7 @@ jobs:
         run: |
           CC=aarch64-linux-gnu-gcc wails build --platform linux/arm64
         env:
+          GO111MODULE: on
           CGO_ENABLED: 1
 
       - name: Upload Linux ARM64 artifact
@@ -110,11 +120,15 @@ jobs:
 
       - name: Install Wails
         run: go install github.com/wailsapp/wails/v2/cmd/wails@latest
+        env:
+          GO111MODULE: on
 
       - name: Get Go dependencies
         run: |
           go mod tidy
           go mod download
+        env:
+          GO111MODULE: on
 
       - name: Get frontend dependencies
         working-directory: ./frontend
@@ -123,6 +137,8 @@ jobs:
       - name: Build Linux AMD64
         working-directory: .
         run: wails build --platform linux/amd64
+        env:
+          GO111MODULE: on
 
       - name: Upload Linux AMD64 artifact
         uses: actions/upload-artifact@v4
