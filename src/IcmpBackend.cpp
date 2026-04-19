@@ -55,7 +55,7 @@ PingResult WinIcmpBackend::ping_once(uint32_t ip, uint32_t timeout_ms, uint16_t 
         PICMP_ECHO_REPLY reply = reinterpret_cast<PICMP_ECHO_REPLY>(reply_buffer.data());
         result.status = reply->Status;
         
-        if (reply->Status == IP_SUCCESS || reply->Status == IP_TTL_EXPIEDED_TRANSIT) {
+        if (reply->Status == IP_SUCCESS || reply->Status == IP_TTL_EXPIRED_TRANSIT) {
             result.success = true;
             result.rtt_ms = reply->RoundTripTime;
         } else {

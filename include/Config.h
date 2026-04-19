@@ -6,9 +6,7 @@
 #include <string>
 #include <vector>
 
-#ifndef NLOHMANN_JSON_H
 #include <nlohmann/json.hpp>
-#endif
 
 struct AppConfig {
     PingConfig ping;

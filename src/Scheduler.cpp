@@ -1,6 +1,7 @@
 #include "Scheduler.h"
 #include <chrono>
 #include <algorithm>
+#include <numeric>
 
 Scheduler::Scheduler() {}
 
