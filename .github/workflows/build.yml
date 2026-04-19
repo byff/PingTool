@@ -15,17 +15,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Setup CMake
-      uses: cmake/setup-cmake@v3
-      with:
-        cmake-version: '3.28.1'
-
     - name: Configure CMake
-      shell: pwsh
       run: cmake -B build -DCMAKE_BUILD_TYPE=Release
 
     - name: Build
-      shell: pwsh
       run: cmake --build build --config Release --parallel
 
     - name: Upload Artifact
@@ -41,11 +34,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-
-    - name: Install CMake
-      uses: cmake/setup-cmake@v3
-      with:
-        cmake-version: '3.28.1'
 
     - name: Configure CMake
       run: cmake -B build -DCMAKE_BUILD_TYPE=Release
