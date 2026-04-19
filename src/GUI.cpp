@@ -3,7 +3,7 @@
 #define NOSHLWAPI
 
 #ifdef _MSC_VER
-#define override __identifier_override
+#define override __identifier__(override)
 #pragma warning(disable: 4814)
 #endif
 
