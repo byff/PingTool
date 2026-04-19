@@ -1,0 +1,20 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "PingTool",
+  "outputfilename": "PingTool",
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build",
+  "frontend:dev": "npm run dev",
+  "author": {
+    "name": "byff",
+    "email": ""
+  },
+  "info": {
+    "companyName": "PingTool",
+    "productName": "PingTool",
+    "productVersion": "v1.0.0",
+    "copyright": "Copyright 2026",
+    "comments": "高性能多目标Ping工具"
+  },
+  "wailsjsdir": "./frontend"
+}

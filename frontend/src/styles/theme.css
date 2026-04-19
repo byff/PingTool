@@ -1,0 +1,254 @@
+:root {
+  --accent: #409CFF;
+  --success: #50C878;
+  --fail: #FF5555;
+  --warning: #FFB432;
+  --text-dim: #787D87;
+  --bg: #181A20;
+  --window-fill: #181A26;
+  --table-stripe: #1E2128;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'JetBrains Mono', 'Consolas', 'Microsoft YaHei', monospace;
+  background-color: var(--bg);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--bg);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--window-fill);
+  height: 56px;
+  gap: 8px;
+}
+
+.toolbar-left {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.toolbar-right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-right: 16px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.input-section {
+  background: var(--window-fill);
+  border-radius: 6px;
+  padding: 12px;
+  height: 100px;
+}
+
+.input-section label {
+  display: block;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.input-section textarea {
+  width: 100%;
+  height: calc(100% - 20px);
+  background: var(--bg);
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #fff;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  resize: none;
+}
+
+.input-section textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.table-section {
+  flex: 1;
+  background: var(--window-fill);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.table-header {
+  display: flex;
+  background: #252830;
+  height: 36px;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.table-body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.table-row {
+  display: flex;
+  height: 32px;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 12px;
+  border-bottom: 1px solid #252830;
+}
+
+.table-row:nth-child(even) {
+  background: var(--table-stripe);
+}
+
+.table-row:hover {
+  background: #2a2d38;
+}
+
+.table-cell {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.col-num { width: 50px; }
+.col-hostname { width: 140px; }
+.col-ip { width: 130px; }
+.col-success { width: 70px; color: var(--success); }
+.col-fail { width: 60px; color: var(--fail); }
+.col-fail-pct { width: 70px; }
+.col-total { width: 60px; }
+.col-rtt { width: 90px; color: var(--accent); }
+.col-max { width: 80px; color: var(--accent); }
+.col-min { width: 80px; color: var(--accent); }
+.col-avg { width: 80px; color: var(--accent); }
+
+.status-alive { color: var(--success); font-weight: 700; }
+.status-partial { color: var(--warning); }
+.status-failed { color: var(--fail); }
+.status-unknown { color: var(--text-dim); }
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  padding: 6px 16px;
+  background: var(--window-fill);
+  height: 32px;
+  font-size: 12px;
+  color: var(--text-dim);
+  gap: 16px;
+}
+
+.status-item {
+  display: flex;
+  gap: 4px;
+}
+
+.settings-modal .ant-modal-content {
+  background: var(--window-fill);
+}
+
+.settings-modal .ant-modal-header {
+  background: var(--window-fill);
+  border-bottom: 1px solid #333;
+}
+
+.settings-modal .ant-modal-title {
+  color: var(--accent);
+}
+
+.settings-section {
+  background: var(--bg);
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.settings-section-title {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.settings-row label {
+  color: #fff;
+  font-size: 12px;
+}
+
+.slider-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.slider-control input[type="range"] {
+  width: 200px;
+}
+
+.dropzone {
+  border: 2px dashed var(--accent);
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dropzone:hover {
+  border-color: var(--success);
+  background: rgba(64, 156, 255, 0.1);
+}
