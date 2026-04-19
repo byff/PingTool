@@ -1,0 +1,12 @@
+node_modules/
+dist/
+target/
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+.DS_Store
+Thumbs.db
+*.log
+logs/
