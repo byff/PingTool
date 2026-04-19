@@ -2,11 +2,6 @@
 #define NOMINMAX
 #define NOSHLWAPI
 
-#ifdef _MSC_VER
-#define override __identifier__(override)
-#pragma warning(disable: 4814)
-#endif
-
 #include "GUI.h"
 #include "CIDR.h"
 #include <windows.h>
