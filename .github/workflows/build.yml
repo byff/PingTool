@@ -1,0 +1,55 @@
+name: C++ Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup CMake
+      uses: cmake-actions/setup-cmake@v1
+      with:
+        cmake-version: '3.28'
+
+    - name: Configure CMake
+      run: cmake -B ${{ github.workspace }}/build -DCMAKE_BUILD_TYPE=Release
+
+    - name: Build
+      run: cmake --build ${{ github.workspace }}/build --config Release --parallel
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: PingTool-win64
+        path: ${{ github.workspace }}/build/Release/PingTool.exe
+        retention-days: 7
+
+  build-ubuntu:
+    runs-on: ubuntu-latest
+    container: gcc:13
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Configure CMake
+      run: cmake -B ${{ github.workspace }}/build -DCMAKE_BUILD_TYPE=Release
+
+    - name: Build
+      run: cmake --build ${{ github.workspace }}/build --parallel
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: PingTool-linux
+        path: ${{ github.workspace }}/build/PingTool
+        retention-days: 7
