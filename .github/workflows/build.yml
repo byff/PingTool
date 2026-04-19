@@ -25,14 +25,14 @@ jobs:
           node-version: '20'
 
       - name: Install Wails
-        run: go install github.com/wailsapp/wails/v2/cmd/wails@latest
+        run: go install github.com/wailsapp/wails/v2/cmd/wails@v2.8.0
         env:
           GO111MODULE: on
 
       - name: Get Go dependencies
         run: |
-          go mod tidy
-          go mod download
+          go mod tidy -mod=mod
+          go mod download -mod=mod
         env:
           GO111MODULE: on
 
@@ -69,14 +69,14 @@ jobs:
           node-version: '20'
 
       - name: Install Wails
-        run: go install github.com/wailsapp/wails/v2/cmd/wails@latest
+        run: go install github.com/wailsapp/wails/v2/cmd/wails@v2.8.0
         env:
           GO111MODULE: on
 
       - name: Get Go dependencies
         run: |
-          go mod tidy
-          go mod download
+          go mod tidy -mod=mod
+          go mod download -mod=mod
         env:
           GO111MODULE: on
 
@@ -119,14 +119,14 @@ jobs:
           node-version: '20'
 
       - name: Install Wails
-        run: go install github.com/wailsapp/wails/v2/cmd/wails@latest
+        run: go install github.com/wailsapp/wails/v2/cmd/wails@v2.8.0
         env:
           GO111MODULE: on
 
       - name: Get Go dependencies
         run: |
-          go mod tidy
-          go mod download
+          go mod tidy -mod=mod
+          go mod download -mod=mod
         env:
           GO111MODULE: on
 
