@@ -203,7 +203,7 @@ func (s *PingService) ping(t target, timeout, packetSize, interval int) *PingRes
 		}
 
 		reply := make([]byte, 1024)
-		n, _, err := conn.ReadFrom(reply)
+		_, _, err := conn.ReadFrom(reply)
 		if err != nil {
 			totalFail++
 			seq++

@@ -160,7 +160,7 @@ func (s *ExcelService) InsertToSource(results []PingResult, sourcePath string, c
 		f.SetCellValue(sheet, fmt.Sprintf("%s%d", colLetter, rowIdx), fmt.Sprintf("%s|%s|%s|%s", r.Success, r.Fail, r.FailPct, r.RTT))
 	}
 
-	return f.SaveFile(sourcePath)
+	return f.SaveAs(sourcePath)
 }
 
 func findIPColumn(headers []string) int {
